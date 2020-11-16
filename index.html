@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Slider</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="img-slider">
+      <div class="slide active">
+        <img src="1.jpg" alt="">
+        <div class="info">
+          <h2>Long</h2>
+          <p>Are you bored with losing traffic to your website? Having an extended URL like 
+            https://www.amazon.in/b/ref=gbph_img_m-5_0178_bff0ca41?node=218. . .  .  .  will create folks lose interest in checking your website. A method to repair this is able to be to shorten your URL.               
+            </p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="2.jpg" alt="">
+        <div class="info">
+          <h2>SHORT</h2>
+          <p>A long URL that's born-again to a short URL after shortening the address becomes simple and neat to place on social media, that promotes sharing and increase in ranking.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="3.jpg" alt="">
+        <div class="info">
+          <h2>TRACK</h2>
+          <p>Enter click tracking, that is literally about tracking what’s being clicked (URL), being able to watch the numbers of clicks will make you work more on delivering a lot of content worth to your users and obtain the clicks your business needs to succeed and grow.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="4.jpg" alt="">
+        <div class="info">
+          <h2>EXAMPLE</h2>
+          <p>Long URL:  https://www.amazon.in/b/ref=gbph_img_m-5_0178_bff0ca41?node=21827649031&smid=A35FCS7U51TK3.    .    .    .    .
+            Gets converted to 
+            Short URL: https://rb.gy/peggao             
+            </p>
+        </div>
+      </div>
+      
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+   
+    </script>
+
+  </body>
+</html>
